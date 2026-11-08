@@ -30,3 +30,4 @@ int main() {
     double L = 0.5 * ro * pow(V, 2) * S * CL;
 
     cout << "Подъемная сила L = " << fixed << setprecision(3) << L << " Н" << endl;
+
