@@ -1,0 +1,30 @@
+﻿#include <iostream>
+#include <clocale>
+
+using namespace std;
+
+class Gyroscope {
+private:
+    double angularVelocity;
+    bool calibrationRequired;
+public:
+    Gyroscope(double vel, bool calib) : angularVelocity(vel), calibrationRequired(calib) {}
+
+    void calibrate() {
+        calibrationRequired = false;
+    }
+
+    void printStatus() const {
+        cout << "Скорость: " << angularVelocity << " °/с | Калибровка "
+            << (calibrationRequired ? "требуется" : "не требуется") << "\n";
+    }
+};
+
+int main() {
+    setlocale(LC_ALL, "RUS");
+    Gyroscope g1(120.5, true);
+    g1.printStatus();
+    g1.calibrate();
+    g1.printStatus();
+    return 0;
+}
